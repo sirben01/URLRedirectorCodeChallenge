@@ -1,11 +1,6 @@
-﻿using RedirecotorService.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RedirectorService.Models;
 
-namespace RedirecotorService.Repositories
+namespace RedirectorService.Repositories
 {
     public interface IRedirectRepository
     {

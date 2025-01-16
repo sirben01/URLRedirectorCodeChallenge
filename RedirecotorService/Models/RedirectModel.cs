@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace RedirecotorService.Models
+﻿namespace RedirectorService.Models
 {
     public class RedirectModel
     {

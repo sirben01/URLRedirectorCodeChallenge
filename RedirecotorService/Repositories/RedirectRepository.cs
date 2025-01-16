@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using RedirecotorService.Models;
+using RedirectorService.Models;
 
-namespace RedirecotorService.Repositories
+namespace RedirectorService.Repositories
 {
     public class RedirectRepository : IRedirectRepository
     {

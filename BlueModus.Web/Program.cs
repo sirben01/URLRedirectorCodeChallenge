@@ -1,5 +1,5 @@
 using BlueModus.Web;
-using RedirecotorService;
+using RedirectorService;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders().AddSimpleConsole(options =>
@@ -13,7 +13,7 @@ builder.Logging.ClearProviders().AddSimpleConsole(options =>
 builder.Services.AddControllersWithViews();
 
 
-builder.Services.AddSingleton<IRedirectorService, RedirectorService>();
+builder.Services.AddSingleton<IRedirectorService, RedirectionService>();
 
 
 var app = builder.Build();

@@ -1,4 +1,4 @@
-﻿namespace RedirecotorService
+﻿namespace RedirectorService
 {
     public interface IRedirectorService
     {

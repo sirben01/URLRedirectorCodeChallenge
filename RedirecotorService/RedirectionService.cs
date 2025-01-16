@@ -2,14 +2,13 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using RedirecotorService.Models;
-using RedirecotorService.Repositories;
-using System.Net;
+using RedirectorService.Models;
+using RedirectorService.Repositories;
 using System.Timers;
 
-namespace RedirecotorService
+namespace RedirectorService
 {
-    public class RedirectorService : IRedirectorService
+    public class RedirectionService : IRedirectorService
     {
         private readonly IMemoryCache _memoryCache;
         private readonly IRedirectRepository _redirectRepository;
@@ -19,7 +18,7 @@ namespace RedirecotorService
         private const string REDIRECT_CACHE_KEY = "URL_REDIRECT_CACHE";
         private const double DEFAULT_EXPIRATION = 5;
         private const int DEFAULT_REFRESH_MINUTES = 1;
-        public RedirectorService(ILogger<RedirectorService> logger, IConfiguration configuration)
+        public RedirectionService(ILogger<RedirectionService> logger, IConfiguration configuration)
         {
             IOptions<MemoryCacheOptions> options = new MemoryCacheOptions();
 

@@ -1,4 +1,4 @@
-﻿using RedirecotorService;
+﻿using RedirectorService;
 namespace BlueModus.Web
 {
     // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
@@ -8,10 +8,10 @@ namespace BlueModus.Web
         private readonly IRedirectorService _redirectorService;
         private readonly ILogger<RedirectionMiddleware> _logger;
 
-        public RedirectionMiddleware(RequestDelegate next, IRedirectorService redirecotorService, ILogger<RedirectionMiddleware> logger)
+        public RedirectionMiddleware(RequestDelegate next, IRedirectorService redirectorService, ILogger<RedirectionMiddleware> logger)
         {
             _next = next;
-            _redirectorService = redirecotorService;
+            _redirectorService = redirectorService;
             _logger = logger;
         }
 

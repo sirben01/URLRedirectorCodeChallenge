@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedirecotorService", "RedirecotorService\RedirecotorService.csproj", "{729F081E-123F-4C5C-92FE-1B5AF1587562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedirectorService", "RedirecotorService\RedirectorService.csproj", "{729F081E-123F-4C5C-92FE-1B5AF1587562}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueModus.Web", "BlueModus.Web\BlueModus.Web.csproj", "{73C7D3A3-DF0F-4BCF-A573-4C56A11D6A38}"
 EndProject
