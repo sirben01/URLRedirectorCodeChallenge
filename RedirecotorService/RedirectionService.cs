@@ -37,8 +37,9 @@ namespace RedirectorService
             _redirectRepository = new RedirectRepository(_logger);
         }
 
-        public async Task<string> CheckForRedirect(string redirectUrl)
+        public async Task<(string, int)> CheckForRedirect(string redirectUrl)
         {
+            int redirectType = -1;
             string targetUrl = redirectUrl;
             if (!_memoryCache.TryGetValue(REDIRECT_CACHE_KEY, out IEnumerable<RedirectModel> redirectModels))
             {
@@ -51,6 +52,7 @@ namespace RedirectorService
             RedirectModel? foundRedirect = redirectModels?.FirstOrDefault(r => r.RedirectUrl.ToLowerInvariant() == rootSegment.ToLowerInvariant());
             if (foundRedirect != null)
             {
+                redirectType = foundRedirect.RedirectType;
                 targetUrl = foundRedirect.TargetUrl;
                 if (foundRedirect.UseRelative)
                 {
@@ -59,10 +61,11 @@ namespace RedirectorService
                     }
                 }
                 _logger.LogInformation($"Redirect found for {redirectUrl} redirecting to {targetUrl}");
+                
             }
                 
 
-            return targetUrl;
+            return (targetUrl, redirectType);
 
         }
 

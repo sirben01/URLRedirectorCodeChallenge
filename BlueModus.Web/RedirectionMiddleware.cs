@@ -17,9 +17,10 @@ namespace BlueModus.Web
 
         public async Task InvokeAsync(HttpContext httpContext)
         {
-            string targetPath = await _redirectorService.CheckForRedirect(httpContext.Request.Path);
+            //get a tuple from the redirectorService with the targetUrl and redirectType
+            var (targetPath, redirectType) = await _redirectorService.CheckForRedirect(httpContext.Request.Path);
             if (targetPath != httpContext.Request.Path)
-                httpContext.Response.Redirect(targetPath);
+                httpContext.Response.Redirect(targetPath, redirectType == 301 ? true : false);
             else
                 await _next(httpContext);
         }

@@ -2,6 +2,6 @@
 {
     public interface IRedirectorService
     {
-        Task<string> CheckForRedirect(string redirectUrl);
+        Task<(string, int)> CheckForRedirect(string redirectUrl);
     }
 }
